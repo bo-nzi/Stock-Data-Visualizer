@@ -45,7 +45,7 @@ def Get_Time_Series():
     print("4. Monthly")
     
     while True: # loops until either 1,2,3,4 is entered
-        chart_type = input("\nEnter time series option (1, 2, 3, 4): ") #asking user for chart type input
+        chart_type = input("\nEnter time series option (1, 2, 3, 4): ") #asking user for time series input
         if chart_type == '1' or chart_type == '2'or chart_type == '3' or chart_type == '4':
             return chart_type
         else:
