@@ -57,16 +57,19 @@ def Get_Start_Date():
         start_date = input("\nEnter the start Date (YYYY-MM-DD): ") #asking user to enter end date
         try:
             date_format = datetime.strptime(start_date, "%Y-%m-%d") #makes sure date is in the corect format 
-            return start_date
+            return date_format
         except ValueError:
             print("\nInvalid input. Please enter the correct date format (YYYY-MM_DD).")
 
-def Get_End_Date():  
+def Get_End_Date(start_date):  
     while True: 
         end_date = input("\nEnter the end Date (YYYY-MM-DD): ") #asking user to enter end date
         try:
-            date_format = datetime.strptime(end_date, "%Y-%m-%d") #makes sure date is in the correct format 
-            return end_date
+            date_format2 = datetime.strptime(end_date, "%Y-%m-%d") #makes sure date is in the correct format 
+            if date_format2 > start_date:
+                return date_format2
+            else:
+                print("\nInvalid input. The end date must be after the start date.")
         except ValueError:
             print("\nInvalid input. Please enter the correct date format (YYYY-MM_DD).")
 
@@ -77,7 +80,7 @@ def main():
     Chart_Type = Get_Chart_Type() #gets chart type
     Time_Series = Get_Time_Series() #gets time series
     Start_Date = Get_Start_Date() #gets start date
-    End_Date = Get_End_Date() #gets end date
+    End_Date = Get_End_Date(Start_Date) #gets end date
 
 
 if __name__ == "__main__":
