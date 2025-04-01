@@ -37,7 +37,7 @@ def Get_Chart_Type():
             print("Invalid input. Please enter either 1 for bar chart or 2 for line chart.")
 
 def Get_Time_Series():
-    print("Select the Time Series of the chart you want to Generate")
+    print("\nSelect the Time Series of the chart you want to Generate")
     print("--------------------------------------------------------")
     print("1. Intraday")
     print("2. Daily")
@@ -45,18 +45,18 @@ def Get_Time_Series():
     print("4. Monthly")
     
     while True: # loops until either 1,2,3,4 is entered
-        chart_type = input("Enter time series option (1, 2, 3, 4): ") #asking user for chart type input
+        chart_type = input("\nEnter time series option (1, 2, 3, 4): ") #asking user for chart type input
         if chart_type == '1' or chart_type == '2'or chart_type == '3' or chart_type == '4':
             return chart_type
         else:
-            print("Invalid input. Please enter either 1 for Intraday, 2 for Daily, 3 for Weekly, or 4 for Monthly.")
+            print("\nInvalid input. Please enter either 1 for Intraday, 2 for Daily, 3 for Weekly, or 4 for Monthly.")
 
 def main():
     print("Stock Data Visualizer")
     print("------------------------")
     symbol = Get_Symbol() # gets stock symbol
     Chart_Type = Get_Chart_Type() #gets chart type
-
+    Time_Series = Get_Time_Series() #gets time series
 
 
 if __name__ == "__main__":
