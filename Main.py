@@ -52,12 +52,22 @@ def Get_Time_Series():
         else:
             print("\nInvalid input. Please enter either 1 for Intraday, 2 for Daily, 3 for Weekly, or 4 for Monthly.")
 
+def Get_Start_Date():  
+    while True: 
+        start_date = input("\nEnter the start Date (YYYY-MM-DD): ") #asking user to enter stard date
+        try:
+            date_format = datetime.strptime(start_date, "%Y-%m-%d")
+            return start_date
+        except ValueError:
+            print("\nInvalid input. Please enter the correct date format (YYYY-MM_DD).")
+
 def main():
     print("Stock Data Visualizer")
     print("------------------------")
     symbol = Get_Symbol() # gets stock symbol
     Chart_Type = Get_Chart_Type() #gets chart type
     Time_Series = Get_Time_Series() #gets time series
+    Start_Date = Get_Start_Date() #gets start date
 
 
 if __name__ == "__main__":
