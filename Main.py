@@ -2,6 +2,7 @@
 import csv
 import requests
 from io import StringIO
+from datetime import datetime
 
 API_KEY = 'RNNX6G5V6FI46SB4'  #Replace with your API key!!!!
 
@@ -45,9 +46,9 @@ def Get_Time_Series():
     print("4. Monthly")
     
     while True: # loops until either 1,2,3,4 is entered
-        chart_type = input("\nEnter time series option (1, 2, 3, 4): ") #asking user for time series input
-        if chart_type == '1' or chart_type == '2'or chart_type == '3' or chart_type == '4':
-            return chart_type
+        time_series = input("\nEnter time series option (1, 2, 3, 4): ") #asking user for time series input
+        if time_series == '1' or time_series == '2'or time_series == '3' or time_series == '4':
+            return time_series
         else:
             print("\nInvalid input. Please enter either 1 for Intraday, 2 for Daily, 3 for Weekly, or 4 for Monthly.")
 
